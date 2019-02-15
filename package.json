@@ -3,6 +3,7 @@
   "linter-package": true,
   "main": "./lib/init",
   "version": "0.1.0",
+  "private": true,
   "description": "Check Go files with gotype tool",
   "keywords": [
     "go",
