@@ -3,6 +3,7 @@
   "linter-package": true,
   "main": "./lib/init",
   "version": "0.1.0",
+  "private": true,
   "description": "Check Go files with gotype tool",
   "keywords": [
     "go",
@@ -20,5 +21,20 @@
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "semanticCommits": true,
+    "rangeStrategy": "pin",
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^eslint"
+        ],
+        "groupName": "ESLint packages"
+      }
+    ]
   }
 }
