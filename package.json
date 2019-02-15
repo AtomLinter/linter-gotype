@@ -20,5 +20,20 @@
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "semanticCommits": true,
+    "rangeStrategy": "pin",
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^eslint"
+        ],
+        "groupName": "ESLint packages"
+      }
+    ]
   }
 }
