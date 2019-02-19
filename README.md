@@ -12,11 +12,14 @@ $ apm install linter-gotype
 ```
 
 ## Settings
-You must configure linter-gotype by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
-```
-'linter-gotype':
-  'executablePath': path to gotype executable. Use `which gotype` to find it out.
-```
+Settings can be configured from Atom's settings page in the packages section.
+
+Available settings are:
+* **gotype Executable Path**: The _full_ path to `gotype`, for example `$HOME/go/bin/gotype`. Leave at the default to use the system `$PATH` to find it
+* **Report All Errors**: Report all gotype errors (not just the first 10)
+* **Verbose Mode**: Verbose mode for `gotype` command
+
+Run `which gotype` to find the path, if you cant find it and you are sure you have installed it via `go get -u golang.org/x/tools/cmd/gotype` you can check your home directory and look for a `go\bin` directory.
 
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
