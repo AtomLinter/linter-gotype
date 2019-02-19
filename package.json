@@ -20,7 +20,43 @@
   "homepage": "https://github.com/AtomLinter/linter-gotype",
   "license": "MIT",
   "engines": {
-    "atom": ">=0.174.0 <2.0.0"
+    "atom": ">=1.9.0 <2.0.0"
+  },
+  "configSchema": {
+    "executablePath": {
+      "type": "string",
+      "description": "The path to the `gotype` executable. Find by running `which gotype`",
+      "default": "gotype"
+    },
+    "reportAllErrors": {
+      "type": "boolean",
+      "default": true,
+      "description": "Report all errors (not just the first 10)"
+    },
+    "verboseMode": {
+      "type": "boolean",
+      "default": true,
+      "description": "Verbose mode for `gotype` command"
+    },
+    "extraOptions": {
+      "type": "string",
+      "default": "",
+      "description": "Options for `gotype` command"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "atom --test spec"
+  },
+  "dependencies": {
+    "atom-linter": "10.0.0",
+    "atom-package-deps": "5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "5.13.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "jasmine-fix": "1.3.1"
   },
   "renovate": {
     "extends": [
@@ -36,5 +72,36 @@
         "groupName": "ESLint packages"
       }
     ]
+  },
+  "package-deps": [
+    "linter:2.0.0"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "global-require": "off",
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "node": true,
+      "browser": true
+    }
   }
 }
