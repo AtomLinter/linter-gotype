@@ -6,7 +6,7 @@ import {
   it, fit, wait, beforeEach, afterEach,
 } from 'jasmine-fix';
 
-const { lint } = require('../lib/linter-gotype.js').provideLinter();
+const { lint } = require('../lib/init.js').provideLinter();
 
 const goodFile = path.join(__dirname, 'fixtures', 'good.go');
 const badFile = path.join(__dirname, 'fixtures', 'bad.go');
