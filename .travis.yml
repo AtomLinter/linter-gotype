@@ -7,16 +7,15 @@ install: skip
 matrix:
   include:
     - os: linux
+      go: "1.10"
       env: ATOM_CHANNEL=stable
 
     - os: linux
+      go: "1.10"
       env: ATOM_CHANNEL=beta
 
 install:
   - go get -u golang.org/x/tools/cmd/gotype
-
-before_script:
-  - go version
 
 ### Generic setup follows ###
 script:
