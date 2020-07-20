@@ -20,7 +20,7 @@ defaults: &defaults
         command: |
           sudo apt-get update && \
           sudo apt-get install --assume-yes --quiet --no-install-suggests \
-            --no-install-recommends golang-1.13-go && \
+            --no-install-recommends golang-go && \
           echo 'export PATH="`go env GOPATH`/bin:$PATH"' >> $BASH_ENV
     - run:
         name: Install gotype
