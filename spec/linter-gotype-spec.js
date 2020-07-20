@@ -18,7 +18,7 @@ describe('The gotype provider for Linter', () => {
   });
 
   it('checks a file with syntax error and reports the correct message', async () => {
-    const excerpt = "expected declaration, found 'IDENT' fmt";
+    const excerpt = 'expected declaration, found fmt';
     const editor = await atom.workspace.open(badFile);
     const messages = await lint(editor);
 
