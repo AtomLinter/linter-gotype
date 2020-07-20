@@ -5,11 +5,11 @@ language: go
 matrix:
   include:
     - os: linux
-      go: "1.10"
+      go: "1.13"
       env: ATOM_CHANNEL=stable
 
     - os: linux
-      go: "1.10"
+      go: "1.13"
       env: ATOM_CHANNEL=beta
 
 install:
