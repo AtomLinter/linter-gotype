@@ -9,11 +9,15 @@ defaults: &defaults
     - attach_workspace:
         at: /tmp
     - run:
+        name: Add Go backports repository
+        command: |
+          sudo add-apt-repository ppa:longsleep/golang-backports -y
+    - run:
         name: Install Go
         command: |
           sudo apt-get update && \
           sudo apt-get install --assume-yes --quiet --no-install-suggests \
-            --no-install-recommends golang && \
+            --no-install-recommends golang-1.13-go && \
           echo 'export PATH="`go env GOPATH`/bin:$PATH"' >> $BASH_ENV
     - run:
         name: Install gotype
